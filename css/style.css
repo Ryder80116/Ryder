@@ -1,0 +1,269 @@
+:root{
+    --mainColor: #FFBB00;
+    --mainLightColor: #FFEE00;
+    --textColor: #EEEEEE;
+    --purpleColor: #FF77FF;
+    --purpleDarkColor: #FF11FF;
+    --purpleAlphaColor: #FF11FF88;
+    --blackAlphaColor: #000000;
+    --shadow: 3px 3px 5px #222;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+header{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: var(--mainColor);
+    position: relative;
+    z-index: 20;
+}
+header.flex h1{
+    width: 100%;
+}
+header.flex menu{
+    width: 100%;
+    background-color: var(--blackAlphaColor);
+    display:none;
+}
+header.flex nav{
+    width: 2em;
+    height: 1em;
+    position: absolute;
+    top: calc(30px - 0.5em);
+    right: 1em;
+}
+header.flex nav .bar{
+    width: 100%;
+    height: 2px;
+    background-color: var(--textColor);
+    position: absolute;
+}
+header.flex nav .bar:nth-of-type(2){
+    top: calc(0.5em - 1px);
+}
+header.flex nav .bar:nth-of-type(3){
+    top: calc(0.5em - 1px);
+}
+header.flex nav .bar:nth-of-type(4){
+    bottom: 0;
+}
+main{
+    width: 100%;
+    height: calc(100vh - 120px);
+}
+main#home{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+main#home .box{
+    width: calc(100vw / 4);
+    min-width: 150px;
+    height: calc(100vw / 4);
+    min-height: 150px;
+    margin: 0 2em;
+    border: 5px solid var(--mainColor);
+    border-radius: 50%;
+    font-size: 40px;
+    line-height: 150px;
+    text-align: center;
+    color: var(--mainColor);
+    font-weight: 700;
+    box-shadow: var(--shadow);
+}
+main#home .box:hover{
+    border-color: var(--mainLightColor);
+    color: var(--mainLightColor);
+    box-shadow: var(--shadow) inset;
+}
+main#game .box{
+    margin-top: 10vh;
+    width: 50%;
+    min-width: 280px;
+    max-width: 350px;
+    color: var(--mainColor);
+    text-align: center;
+    padding: 1em;
+}
+main#game .box h2{
+    font-size: 28px;
+    color: var(--mainColor);
+    padding: 0.5em 0;
+}
+main#game hr{
+    width: 100%;
+    border: 2px solid var(--mainColor);
+}
+main#game .box ol{
+    font-size: 20px;
+    line-height: 2em;
+    padding: 1em 0;
+}
+main#game .box ol li{
+    cursor: pointer;
+    transition: all 800ms ease;
+}
+main#game .box ol li.big{
+    transform:scale(1.2);
+}
+main#game .box ol li.choose{
+    transform:scale(1.2);
+    color:var(--purpleColor);
+}
+main#game .box button{
+    width: 100%;
+    padding: 0.5em 0;
+    background-color: var(--blackAlphaColor);
+    color: var(--purpleColor);
+    border: 3px solid var(--purpleDarkColor);
+    border-radius: 6px;
+    cursor: pointer;
+}
+main#game p{
+    font-size: 17px;
+    letter-spacing: 2px;
+    line-height: 1.6em;
+    text-align: justify;
+    padding: 0.5em 0;
+    display: none;
+}
+main#game .box #reset{
+    display: none;
+}
+footer{
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    font-size: 12px;
+    color: var(--textColor);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+#msg{
+    width: 250px;
+    padding: 1em;
+    position: fixed;
+    top: 30vh;
+    left: calc(50% - 125px);
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 8px;
+    border: 2px solid var(--mainColor);
+}
+#msg button{
+    width: 80%;
+    padding: 0.25em 1em;
+    margin: 1em auto;
+    background-color: var(--purpleColor);
+}
+#load{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#load img{
+    width: 200px;
+    position: absolute;
+    top: calc(50vh - 100px);
+    left: calc(50% - 100px);
+}
+#load img:nth-of-type(1){
+    animation: shooting 0.3s ease-out forwards;
+}
+/*#load img:nth-of-type(2){
+    animation: shooting 0.4s ease-out forwards;
+}*/
+@keyframes shooting{
+    0%{
+        transform: translateY(50px) scale(4) /*rotate(0deg)*/;
+    }
+    25%{
+        transform: translateY(25px) scale(3.5) /*rotate(60deg)*/;
+    }
+    50%{
+        transform: translateY(0px) scale(3) /*rotate(90deg)*/;
+    }
+    75%{
+        transform: translateY(-25px) scale(2.5) /*rotate(120deg)*/;
+    }
+    100%{
+        transform: translateY(-50px) scale(2) /*rotate(180deg)*/;
+    }
+}
+@media only screen and (min-width: 412px){
+    main#home .box{
+        min-width: 180px;
+        min-height: 180px;
+        margin: 0 3em;
+    }
+}
+@media only screen and (min-width: 768px){
+    main#home .box{
+        min-width: 250px;
+        min-height: 250px;
+        margin: 0 4em;
+        font-size: 60px;
+        line-height: 250px;
+    }
+    header.flex h1{
+        width: 35%;
+    }
+    header.flex menu{
+        display: block!important;
+        width: 65%;
+        background-color: transparent;
+    }
+    header.flex menu ul{
+        text-align: center;
+    }
+    header.flex menu ul li{
+        display: inline-block;
+    }
+    header.flex menu ul li a{
+        display: block;
+        padding: 0 2em;
+        margin: 0 0.5em;
+        background-color: var(--blackAlphaColor);
+        border: 1px solid var(--purpleDarkColor);
+        border-radius: 6px;
+        line-height: 40px;
+        color: var(--mainColor);
+        font-weight: 600;
+        box-shadow: var(--shadow);
+    }
+    header.flex nav{
+        display: none;
+    }
+}
+@media only screen and (min-width: 1024px){
+    main#home .box{
+        max-width: 280px;
+        max-height: 280px;
+        min-width: 250px;
+        min-height: 250px;
+        margin: 0;
+        font-size: 60px;
+        line-height: 280px;
+    }
+}

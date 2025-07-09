@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歐洲｜World Football Scorer</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="flex">
+        <h1><a href="../index.html">World Football Scorer｜首頁</a></h1>
+        <menu>
+            <ul>
+                <li><a href="../Europe/index1.html">歐洲</a></li>
+                <li><a href="../South America/index2.html">南美洲</a></li>
+                <li><a href="../Asia/index3.html">亞洲</a></li>
+            </ul>
+        </menu>
+        <nav>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </nav>
+    </header>
+    <main id="game" class="flex">
+        <div class="box">
+            <h2 id="title">歐洲</h2>
+            <hr>
+            <ol id="check"></ol>
+            <p id="result"></p>
+            <button type="button" id="btn">抽籤</button>
+            <button type="button" id="reset" onclick="window.location.reload()">再玩一次</button>
+        </div>
+    </main>
+    <footer>
+        Copyright &copy; 2025 張維庭. All rights reserved.<br>
+        版權所有 &copy; 2025 張維庭
+    </footer>
+    <div id="load">
+        <!--<img src="../images/football2.png" alt="">-->
+        <img src="../images/football1.png" alt="">
+    </div>
+</body>
+</html>
+<script src="../js/menu.js"></script>
+<script src="../js/dataList.js"></script>
+<script>
+    let data = dataList["Europe"];
+</script>
+<script src="../js/drawlot.js"></script>

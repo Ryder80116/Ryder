@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Football Scorer｜首頁</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">World Football Scorer</a></h1>
+    </header>
+    <main id="home">
+        <a href="Europe/index1.html" title="Europe" class="box">歐洲</a>
+        <a href="South America/index2.html" title="South America" class="box">南美洲</a>
+        <a href="Asia/index3.html" title="Asia" class="box">亞洲</a>
+    </main>
+    <footer>
+            Copyright &copy; 2025 張維庭. All rights reserved.<br>
+            版權所有 &copy; 2025 張維庭
+    </footer>
+    <div id="msg">
+        <p>
+            Do you know you like which player？<br>
+            try it！
+        </p>
+        <button type="button" id="closeBtn">OK</button>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("closeBtn").addEventListener("click", function(){
+        document.getElementById("msg").remove();
+    })
+</script>
